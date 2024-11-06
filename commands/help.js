@@ -1,4 +1,4 @@
-const fs = require('fs');
+whyconst fs = require('fs');
 const path = require('path');
 const { sendMessage } = require('../handles/sendMessage');
 
@@ -42,9 +42,9 @@ module.exports = {
     const helpMessage = `
 ━━━━━━━━━━━━━━
 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:
-╭─╼━━━━━━━━╾─╮
+╭─【﻿ＡＭＢＯＴ】─╮
 ${commands.join('\n')}
-╰─━━━━━━━━━╾─╯
+╰─【﻿ＡＭＢＯＴ】─╯
 Chat -help [name] 
 to see command details.
 ━━━━━━━━━━━━━━`;
