@@ -1,4 +1,3 @@
-
 const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
@@ -19,17 +18,6 @@ const img = response.data.image;
   const message = `Title: ${title}\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...
 `;
   await sendMessage(senderId, { text: message }, pageAccessToken);
-
-const imageMessage = {
-    attachment: {
-      type: 'image',
-      payload: {
-        url: img,
-      },
-    },
-  };
-  await sendMessage(senderId, imageMessage, pageAccessToken);
-
 
   const audioMessage = {
     attachment: {
