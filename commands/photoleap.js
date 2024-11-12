@@ -3,7 +3,7 @@ const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
   name: 'photoleap',
-  description: 'Generate HD picture through your prompt,
+  description: 'Generate HD picture through your prompt',
   usage: 'photoleap [prompt]',
   author: 'coffee',
   async execute(senderId, args, pageAccessToken) {
