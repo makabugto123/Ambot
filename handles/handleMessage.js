@@ -39,16 +39,6 @@ if (messageText === 'remini') {
   }
   return;
 }
-    const gpt4Command = commands.get('gpt4);
-    if (gpt4Command) {
-      try {
-        await gpt4Command.execute(senderId, [messageText], pageAccessToken);
-      } catch (error) {
-        console.error('Error executing Ai command:', error);
-        sendMessage(senderId, { text: 'There was an error processing your request.' }, pageAccessToken);
-      }
-    }
-
   
   try {
     if (commands.has(commandName.toLowerCase())) {
