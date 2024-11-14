@@ -24,8 +24,15 @@ async function handleMessage(event, pageAccessToken) {
     ? messageText.slice(prefix.length).split(' ')
     : messageText.split(' ');
 
-// Handling "remini" command
-if (messageText === 'remini') {
+
+
+  
+  try {
+    if (commands.has(commandName.toLowerCase())) {
+      await commands.get(commandName.toLowerCase()).execute(senderId, args, pageAccessToken, sendMessage);
+    } else if {
+      //Handling remini command
+      if (messageText === 'remini') {
   const lastImage = lastImageByUser.get(senderId);
   if (lastImage) {
     try {
@@ -39,13 +46,11 @@ if (messageText === 'remini') {
   }
   return;
 }
-  
-  try {
-    if (commands.has(commandName.toLowerCase())) {
-      await commands.get(commandName.toLowerCase()).execute(senderId, args, pageAccessToken, sendMessage);
     } else {
       await commands.get('gpt4').execute(senderId, [messageText], pageAccessToken);
     }
+
+    
   } catch (error) {
     console.error(`Error executing command:`, error);
     await sendMessage(senderId, { text: error.message || 'There was an error executing that command.' }, pageAccessToken);
