@@ -30,11 +30,12 @@ async function handleMessage(event, pageAccessToken) {
   try {
     if (commands.has(commandName.toLowerCase())) {
       await commands.get(commandName.toLowerCase()).execute(senderId, args, pageAccessToken, sendMessage);
-    } else if {
-      //Handling remini command
+
+//Handling remini command
       if (messageText === 'remini') {
   const lastImage = lastImageByUser.get(senderId);
-  if (lastImage) {
+ 
+    if (lastImage) {
     try {
       await commands.get('remini').execute(senderId, [], pageAccessToken, lastImage);
       lastImageByUser.delete(senderId); // Remove the image from memory after processing
@@ -46,6 +47,7 @@ async function handleMessage(event, pageAccessToken) {
   }
   return;
 }
+      
     } else {
       await commands.get('gpt4').execute(senderId, [messageText], pageAccessToken);
     }
