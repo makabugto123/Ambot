@@ -24,8 +24,9 @@ module.exports = {
       const response = await axios.get(apiUrl);
       const title = response.data.title;
       const timestamp = response.data.timestamp;
-      const name = response.data.author.name;
+      const name = response.data.name;
       const thumb = response.data.thumbnail;
+      const link = response.data.url;
 
       // Send the male DP image
       await sendMessage(senderId, {
@@ -39,7 +40,7 @@ module.exports = {
       }, pageAccessToken);
 
       // Send the female DP image
-      const mes = `Title: ${title}\nSinger: ${name}\nDuration: ${thumb}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...`;
+      const mes = `Title: ${title}\nSinger: ${name}\nDuration: ${thumb}\nLink: ${link}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...`;
       await sendMessage(senderId, mes, pageAccessToken);
     } catch (error) {
       console.error('Error fetching youtube:', error);
