@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'Youtube',
+  name: 'yt',
   description: 'Search and send audio files',
   usage: 'yt [title]',
   author: 'Kasoooooy/Makoy',
