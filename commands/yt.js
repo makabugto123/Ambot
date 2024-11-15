@@ -9,6 +9,8 @@ module.exports = {
   async execute(senderId, args, pageAccessToken) {
 
      const prompt = args.join(' ');
+     if (!prompt) return sendMessage(senderId, { text: "Usage: yt <title>" }, pageAccessToken);
+    
     const apiUrl = `https://apis-markdevs69v2.onrender.com/new/api/youtube?q=${encodeURIComponent(prompt)}`;  // API endpoint with the prompt
 
 
