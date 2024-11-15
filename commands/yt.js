@@ -31,7 +31,7 @@ module.exports = {
   
 
       // Send the female DP image
-      const mes = `Title: ${title}\nSinger: ${name}\nDuration: ${thumb}\nLink: ${link}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...`;
+      const mes = `Title: ${title}\nSinger: ${name}\nDuration: ${timestamp}\nLink: ${link}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...`;
       await sendMessage(senderId, mes, pageAccessToken);
     } catch (error) {
       console.error('Error fetching youtube:', error);
