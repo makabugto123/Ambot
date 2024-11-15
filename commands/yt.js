@@ -25,19 +25,10 @@ module.exports = {
       const title = response.data.title;
       const timestamp = response.data.timestamp;
       const name = response.data.name;
-      const thumb = response.data.thumbnail;
+      //const thumb = response.data.thumbnail;
       const link = response.data.url;
 
-      // Send the male DP image
-      await sendMessage(senderId, {
-        attachment: {
-          type: 'image',
-          payload: {
-            url: thumb,
-            is_reusable: true
-          }
-        }
-      }, pageAccessToken);
+  
 
       // Send the female DP image
       const mes = `Title: ${title}\nSinger: ${name}\nDuration: ${thumb}\nLink: ${link}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌 𝕻𝖑𝖊𝖆𝖘𝖊 𝖂𝖆𝖎𝖙...`;
