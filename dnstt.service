@@ -1,0 +1,16 @@
+[Unit]
+Description=DNSTT Server Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/dnstt/dnstt-server -a 127.0.0.1:22 -privkey-file /home/dnstt/dnstt-server/server.key -udp :53 x.mantovpn.com
+Restart=always
+User=dnstt
+WorkingDirectory=/home/dnstt
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=dnstt
+
+[Install]
+WantedBy=multi-user.target
