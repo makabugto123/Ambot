@@ -10,7 +10,7 @@ module.exports = {
   async execute(senderId, args, pageAccessToken) {
 
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "Usage: humanizer Your AI-generated text here }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "Usage: humanizer Your AI-generated text here" }, pageAccessToken);
 
     try {
        const { data } = await axios.get(`https://kaiz-apis.gleeze.com/api/humanizer?q=${encodeURIComponent(prompt)}`);
