@@ -69,7 +69,7 @@ if (messageText === 'remini') {
 }
 
 // Handling "removebg" command
-if (messageText === 'removebg) {
+if (messageText === 'removebg') {
   const lastImage = lastImageByUser.get(senderId);
   if (lastImage) {
     try {
