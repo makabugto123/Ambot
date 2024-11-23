@@ -39,7 +39,7 @@ module.exports = {
       }, pageAccessToken);
 
       //send Audio File
-      const picmessage = {
+      const audiomessage = {
     attachment: {
       type: 'audio',
       payload: {
@@ -47,7 +47,7 @@ module.exports = {
       },
     },
   };
-  await sendMessage(senderId, picmessage, pageAccessToken);
+  await sendMessage(senderId, audiomessage, pageAccessToken);
 
     } catch (error) {
       console.error(error);
