@@ -3,7 +3,7 @@ const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
   name: 'sms',
-  description: 'Send Free Text,
+  description: 'Send Free Text',
   usage: 'sms phone# | yourmessage',
   author: 'coffee',
 
