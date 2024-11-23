@@ -28,6 +28,7 @@ module.exports = {
       
       const message = `Message: ${respo}\nSending Text: ${text2}\nSend To: ${text1}\nNetwork: ${simnet}\n
 `;
+      await sendMessage(senderId, message, pageAccessToken);
     } catch {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
     }
