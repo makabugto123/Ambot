@@ -10,7 +10,7 @@ async execute(senderId, args, pageAccessToken, sendMessage) {
 try {
 const apiUrl = 'https://kaiz-apis.gleeze.com/api/shoti';
 const response = await axios.get(apiUrl);
-const final_resp = response.data.shoti:
+const final_resp = response.data.shoti;
 const videoUrl = final_resp.videoUrl;
 const title = final_resp.title;
 const username = final_resp.username;
