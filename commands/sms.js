@@ -7,7 +7,7 @@ module.exports = {
   usage: 'sms phone# | yourmessage',
   author: 'coffee',
 
-  async execute(senderId, args, pageAccessToken) {
+  async execute(senderId, args, pageAccessToken,) {
 
     const text = args.join(" ");
 
@@ -15,7 +15,7 @@ module.exports = {
     const text2 = text.split(' | ').pop().trim();
 
     if (!text1 || !text2) {
-      return sendmessage(senderid, {
+      return sendMessage(senderid, {
         text: formatresponse('Please provide both a question and an answer. Example: 09123456789 | yourmessage')
       }, pageaccesstoken);
     }
