@@ -35,7 +35,7 @@ module.exports = {
   await sendMessage(senderId, picmessage, pageAccessToken);
 
       sendMessage(senderId, { 
-        text: `Anime Information\n\nTitle: ${title}\n\n Author: ${auth}\n\nStatus: ${status}\n\nEpisodes: ${episodes}\n\nDuration: ${duration}\n\nGenres: ${genres}\n\nSource: ${url}\n\n` 
+        text: `Anime Information\n\nTitle: ${title}\n\n Author: ${auth}\n\nStatus: ${status}\n\nEpisodes: ${episodes}\n\nDuration: ${duration}\n\nGenres: ${genres}\n\nSource: ${url}\n\n\nDescription\n\n${description}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
