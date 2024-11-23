@@ -10,13 +10,14 @@ async execute(senderId, args, pageAccessToken, sendMessage) {
 try {
 const apiUrl = 'https://kaiz-apis.gleeze.com/api/shoti';
 const response = await axios.get(apiUrl);
-const videoUrl = response.data.videoUrl;
-const title = response.data.title;
-const username = response.data.username;
-const nickname = response.data.nickname;
-const auth = response.data.author;
-const duration = response.data.duration;
-const region = response.data.region;
+const final_resp = response.data.shoti:
+const videoUrl = final_resp.videoUrl;
+const title = final_resp.title;
+const username = final_resp.username;
+const nickname = final_resp.nickname;
+const auth = final_resp.author;
+const duration = final_resp.duration;
+const region = final_resp.region;
 //const tiktokUrl = response.data.tiktokUrl;
 
   const message = `Title: ${title}\n\nAuthor: ${auth}\n\nUsername: ${username}\n\nNickname: ${nickname}\n\nDuration: ${duration}\n\nRegion: ${region}\n\n𝕯𝖔𝖜𝖓𝖑𝖔𝖆𝖉𝖎𝖓𝖌...`;
