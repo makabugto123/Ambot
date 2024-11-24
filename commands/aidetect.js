@@ -27,7 +27,7 @@ module.exports = {
       
 
       sendMessage(senderId, { 
-        text: `AI DETECTOR\n\nAI STATUS: ${ai}\n\n HUMAN STATUS: ${human}\n\nMESSAGE: ${mes}\n\nWORD COUNT: ${wordcount}\n\nCharacters: ${characters}\n\n` 
+        text: `AI DETECTOR\n\nAI STATUS: ${ai}\n\n HUMAN STATUS: ${human}\n\nMESSAGE: ${mess}\n\nWORD COUNT: ${wordcount}\n\nCharacters: ${characters}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
