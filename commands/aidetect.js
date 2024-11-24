@@ -8,9 +8,9 @@ module.exports = {
   async execute(senderId, args, pageAccessToken, sendMessage) {
 
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "Usage: aidetect text here" }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "𝙐𝙨𝙖𝙜𝙚: 𝙖𝙞𝙙𝙚𝙩𝙚𝙘𝙩 𝙩𝙚𝙭𝙩 𝙝𝙚𝙧𝙚" }, pageAccessToken);
     
-    sendMessage(senderId, { text: "⚙ Detecting Text Please Wait..." }, pageAccessToken);
+    sendMessage(senderId, { text: "⚙ 𝑫𝒆𝒕𝒆𝒄𝒕𝒊𝒏𝒈 𝑻𝒆𝒙𝒕 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
 
     try {
       const response = await axios.get(`https://kaiz-apis.gleeze.com/api/aidetector-v2?q=${encodeURIComponent(prompt)}`);
@@ -27,7 +27,7 @@ module.exports = {
       
 
       sendMessage(senderId, { 
-        text: `AI DETECTOR\n\nAI STATUS: ${ai}\n\n HUMAN STATUS: ${human}\n\nMESSAGE: ${mess}\n\nWORD COUNT: ${wordcount}\n\nCharacters: ${characters}\n\n` 
+        text: `𝘼𝙄 𝘿𝙀𝙏𝙀𝘾𝙏𝙊𝙍\n\n🤖𝘼𝙄 𝙎𝙏𝘼𝙏𝙐𝙎: ${ai}\n\n 🙎𝙃𝙐𝙈𝘼𝙉 𝙎𝙏𝘼𝙏𝙐𝙎: ${human}\n\n💌𝙈𝙀𝙎𝙎𝘼𝙂𝙀: ${mess}\n\n👁️‍🗨️𝙒𝙊𝙍𝘿 𝘾𝙊𝙐𝙉𝙏: ${wordcount}\n\n👁️‍🗨️𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧𝙨: ${characters}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
