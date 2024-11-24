@@ -14,7 +14,7 @@ module.exports = {
 
     try {
       const response = await axios.get(`https://kaiz-apis.gleeze.com/api/aidetector-v2?q=${encodeURIComponent(prompt)}`);
-      const ai = response.data.author;
+      const ai = response.data.ai;
       const human = response.data.human;
       const mess = response.data.message;
       const wordcount = response.data.wordcount;
