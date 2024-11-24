@@ -8,9 +8,9 @@ module.exports = {
   async execute(senderId, args, pageAccessToken, sendMessage) {
 
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "Usage: animeinfo animetitle" }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "𝑼𝒔𝒂𝒈𝒆: 𝒂𝒏𝒊𝒎𝒆𝒊𝒏𝒇𝒐 𝒂𝒏𝒊𝒎𝒆𝒕𝒊𝒕𝒍𝒆" }, pageAccessToken);
     
-    sendMessage(senderId, { text: "⚙ Searching Anime please wait..." }, pageAccessToken);
+    sendMessage(senderId, { text: "⚙ 𝑺𝒆𝒂𝒓𝒄𝒉𝒊𝒏𝒈 𝑨𝒏𝒊𝒎𝒆 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
 
     try {
       const response = await axios.get(`https://kaiz-apis.gleeze.com/api/mal?title=${encodeURIComponent(prompt)}`);
@@ -35,7 +35,7 @@ module.exports = {
   await sendMessage(senderId, picmessage, pageAccessToken);
 
       sendMessage(senderId, { 
-        text: `Anime Information\n\nTitle: ${title}\n\n Author: ${auth}\n\nStatus: ${status}\n\nEpisodes: ${episodes}\n\nDuration: ${duration}\n\nGenres: ${genres}\n\nSource: ${url}\n\n\nDescription\n\n${description}\n\n` 
+        text: `𝑨𝒏𝒊𝒎𝒆 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏\n\n𝑻𝒊𝒕𝒍𝒆: ${title}\n\n𝑨𝒖𝒕𝒉𝒐𝒓: ${auth}\n\n𝑺𝒕𝒂𝒕𝒖𝒔: ${status}\n\n𝑬𝒑𝒊𝒔𝒐𝒅𝒆𝒔: ${episodes}\n\n𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏: ${duration}\n\n𝑮𝒆𝒏𝒓𝒆𝒔: ${genres}\n\n𝑺𝒐𝒖𝒓𝒄𝒆: ${url}\n\n\n𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒕𝒊𝒐𝒏\n\n${description}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
