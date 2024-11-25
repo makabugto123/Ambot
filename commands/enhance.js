@@ -20,14 +20,14 @@ module.exports = {
     try {
       // Fetch the enhanced image from the API
       const response = await axios.get(`https://api.kenliejugarap.com/imgenhanced/?scale=0&imgurl=${encodeURIComponent(imageUrl)}`);
-      const processedImageURL = response.data;
+     // const processedImageURL = response.data;
 
       // Send the enhanced image URL back to the user
       await sendMessage(senderId, {
         attachment: {
           type: "image",
           payload: {
-            url: processedImageURL
+            url: response
           }
         }
       }, pageAccessToken);
