@@ -24,10 +24,11 @@ module.exports = {
       //const url = response.data.url;
       //const picture = response.data.picture;
 
+      const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
       
 
       sendMessage(senderId, { 
-        text: `𝘼𝙄 𝘿𝙀𝙏𝙀𝘾𝙏𝙊𝙍\n\n🤖𝘼𝙄 𝙎𝙏𝘼𝙏𝙐𝙎: ${ai}\n\n 🙎𝙃𝙐𝙈𝘼𝙉 𝙎𝙏𝘼𝙏𝙐𝙎: ${human}\n\n💌𝙈𝙀𝙎𝙎𝘼𝙂𝙀: ${mess}\n\n👁️‍🗨️𝙒𝙊𝙍𝘿 𝘾𝙊𝙐𝙉𝙏: ${wordcount}\n\n👁️‍🗨️𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧𝙨: ${characters}\n\n` 
+        text: `𝘼𝙄 𝘿𝙀𝙏𝙀𝘾𝙏𝙊𝙍\n\n🤖𝘼𝙄 𝙎𝙏𝘼𝙏𝙐𝙎: ${ai}\n\n 🙎𝙃𝙐𝙈𝘼𝙉 𝙎𝙏𝘼𝙏𝙐𝙎: ${human}\n\n💌𝙈𝙀𝙎𝙎𝘼𝙂𝙀: ${mess}\n\n👁️‍🗨️𝙒𝙊𝙍𝘿 𝘾𝙊𝙐𝙉𝙏: ${wordcount}\n\n👁️‍🗨️𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧𝙨: ${characters}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
