@@ -15,12 +15,14 @@ module.exports = {
       const character = quoteData.character.name;
       const quote = quoteData.content;
 
+      const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
+      
       if (!quote || !anime || !character) {
         return sendMessage(senderId, { text: "🥺 𝗦𝗼𝗿𝗿𝘆, 𝗜 𝗰𝗼𝘂𝗹𝗱𝗻'𝘁 𝗳𝗶𝗻𝗱 𝗮𝗻 𝗮𝗻𝗶𝗺𝗲 𝗾𝘂𝗼𝘁𝗲." }, pageAccessToken);
       }
 
       sendMessage(senderId, { 
-        text: `📝: 𝗔𝗻𝗶𝗺𝗲 𝗤𝘂𝗼𝘁𝗲\n\n 🖋️: "${quote}"\n\n👤: ${character} (${anime})` 
+        text: `📝: 𝗔𝗻𝗶𝗺𝗲 𝗤𝘂𝗼𝘁𝗲\n\n 🖋️: "${quote}"\n\n👤: ${character} (${anime}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n)` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
