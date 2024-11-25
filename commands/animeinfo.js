@@ -24,6 +24,8 @@ module.exports = {
       const url = response.data.url;
       const picture = response.data.picture;
 
+      const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
+
       const picmessage = {
     attachment: {
       type: 'image',
@@ -35,7 +37,7 @@ module.exports = {
   await sendMessage(senderId, picmessage, pageAccessToken);
 
       sendMessage(senderId, { 
-        text: `𝑨𝒏𝒊𝒎𝒆 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏\n\n𝑻𝒊𝒕𝒍𝒆: ${title}\n\n𝑨𝒖𝒕𝒉𝒐𝒓: ${auth}\n\n𝑺𝒕𝒂𝒕𝒖𝒔: ${status}\n\n𝑬𝒑𝒊𝒔𝒐𝒅𝒆𝒔: ${episodes}\n\n𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏: ${duration}\n\n𝑮𝒆𝒏𝒓𝒆𝒔: ${genres}\n\n𝑺𝒐𝒖𝒓𝒄𝒆: ${url}\n\n\n𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒕𝒊𝒐𝒏\n\n${description}\n\n` 
+        text: `𝑨𝒏𝒊𝒎𝒆 𝑰𝒏𝒇𝒐𝒓𝒎𝒂𝒕𝒊𝒐𝒏\n\n𝑻𝒊𝒕𝒍𝒆: ${title}\n\n𝑨𝒖𝒕𝒉𝒐𝒓: ${auth}\n\n𝑺𝒕𝒂𝒕𝒖𝒔: ${status}\n\n𝑬𝒑𝒊𝒔𝒐𝒅𝒆𝒔: ${episodes}\n\n𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏: ${duration}\n\n𝑮𝒆𝒏𝒓𝒆𝒔: ${genres}\n\n𝑺𝒐𝒖𝒓𝒄𝒆: ${url}\n\n\n𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒕𝒊𝒐𝒏\n\n${description}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n` 
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
