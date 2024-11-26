@@ -2,7 +2,7 @@ const axios = require("axios");
 const { sendMessage } = require("../handles/sendMessage");
 
 module.exports = {
-  name: "sharpening",
+  name: "sharpenimg",
   description: "Sharpen Your Picture",
   author: "developer",
   usage: "Send any picture first then reply sharpenimg",
