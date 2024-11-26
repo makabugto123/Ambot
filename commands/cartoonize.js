@@ -5,6 +5,7 @@ module.exports = {
   name: "cartoonize",
   description: "Cartoonize Your Picture",
   author: "developer",
+  usage: "Send any picture first then reply cartoonize",
 
   async execute(senderId, args, pageAccessToken, imageUrl) {
     // Check if an image URL is provided
