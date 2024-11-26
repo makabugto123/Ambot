@@ -5,6 +5,7 @@ module.exports = {
   name: "zompic",
   description: "Make Your Picture Zombie",
   author: "developer",
+  usage: "Send any picture first then reply zompic",
 
   async execute(senderId, args, pageAccessToken, imageUrl) {
     // Check if an image URL is provided
