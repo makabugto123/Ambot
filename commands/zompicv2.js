@@ -2,7 +2,7 @@ const axios = require("axios");
 const { sendMessage } = require("../handles/sendMessage");
 
 module.exports = {
-  name: "zompic",
+  name: "zompicv2",
   description: "Make Your Picture Zombie",
   author: "developer",
   usage: "Send any picture first then reply zompicv2",
