@@ -16,8 +16,8 @@ module.exports = {
 
             const parts = [];
 
-            for (let i = 0; i < result.length; i += 1999) {
-                parts.push(result.substring(i, i + 1999));
+            for (let i = 0; i < response.length; i += 1999) {
+                parts.push(response.substring(i, i + 1999));
             }
 
             // send all msg parts
