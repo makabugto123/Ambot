@@ -2,8 +2,8 @@ const axios = require("axios");
 const { sendMessage } = require("../handles/sendMessage");
 
 module.exports = {
-  name: "enhance",
-  description: "Enhance Your Picture",
+  name: "cartoonize",
+  description: "Cartoonize Your Picture",
   author: "developer",
 
   async execute(senderId, args, pageAccessToken, imageUrl) {
