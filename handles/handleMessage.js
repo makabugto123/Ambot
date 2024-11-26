@@ -102,7 +102,7 @@ if (messageText === 'cartoonize') {
 
     
     // Handling "zompicv2" command
-if (messageText === 'zompicv2) {
+if (messageText === 'zompicv2') {
   const lastImage = lastImageByUser.get(senderId);
   if (lastImage) {
     try {
