@@ -5,6 +5,7 @@ module.exports = {
   name: "removebg",
   description: "Remove The Background Of Your Pic",
   author: "developer",
+  usage: "Send any picture first then reply removebg",
 
   async execute(senderId, args, pageAccessToken, imageUrl) {
     // Check if an image URL is provided
