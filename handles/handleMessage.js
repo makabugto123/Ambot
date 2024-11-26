@@ -69,12 +69,12 @@ if (messageText === 'remini') {
 }
 
     
-    // Handling "enhance" command
-if (messageText === 'enhance') {
+    // Handling "zompic" command
+if (messageText === 'zompic') {
   const lastImage = lastImageByUser.get(senderId);
   if (lastImage) {
     try {
-      await commands.get('enhance').execute(senderId, [], pageAccessToken, lastImage);
+      await commands.get('zompic').execute(senderId, [], pageAccessToken, lastImage);
       lastImageByUser.delete(senderId); // Remove the image from memory after processing
     } catch (error) {
       await sendMessage(senderId, { text: '❌ 𝗔𝗻 𝗲𝗿𝗿𝗼𝗿 𝗼𝗰𝗰𝘂𝗿𝗿𝗲𝗱 𝘄𝗵𝗶𝗹𝗲 𝗽𝗿𝗼𝗰𝗲𝘀𝘀𝗶𝗻𝗴 𝘁𝗵𝗲 𝗶𝗺𝗮𝗴𝗲.' }, pageAccessToken);
