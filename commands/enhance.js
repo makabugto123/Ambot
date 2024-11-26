@@ -5,6 +5,7 @@ module.exports = {
   name: "enhance",
   description: "Enhance Your Picture",
   author: "developer",
+  usage: "Send any picture first then reply enhance",
 
   async execute(senderId, args, pageAccessToken, imageUrl) {
     // Check if an image URL is provided
