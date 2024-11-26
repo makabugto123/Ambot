@@ -5,6 +5,7 @@ module.exports = {
   name: "remini",
   description: "enhance image quality",
   author: "developer",
+  usage: "Send any picture first then reply remini",
 
   async execute(senderId, args, pageAccessToken, imageUrl) {
     // Check if an image URL is provided
