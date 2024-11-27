@@ -43,8 +43,6 @@ module.exports = {
     },
   };
   await sendMessage(senderId, audiomessage, pageAccessToken);
-
-      }, pageAccessToken);
     } catch (error) {
       console.error(error);
       sendMessage(senderId, { text: `❌ 𝗔𝗻 𝗲𝗿𝗿𝗼𝗿 𝗼𝗰𝗰𝘂𝗿𝗿𝗲𝗱: ${error.message}` }, pageAccessToken);
