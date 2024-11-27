@@ -1,34 +1,49 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'aidetect',
-  description: 'Detect if the sentence is AI generated text!',
+  name: 'ytmp3',
+  description: 'Search Youtube Song And Download!',
   author: 'Dale Mekumi', 
-  usage: 'aidetect texthere',
+  usage: 'ytmp3 songtitle',
   async execute(senderId, args, pageAccessToken, sendMessage) {
 
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "𝙐𝙨𝙖𝙜𝙚: 𝙖𝙞𝙙𝙚𝙩𝙚𝙘𝙩 𝙩𝙚𝙭𝙩 𝙝𝙚𝙧𝙚" }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "𝑼𝒔𝒂𝒈𝒆: 𝒚𝒕𝒎𝒑3 𝒕𝒊𝒕𝒍𝒆" }, pageAccessToken);
     
-    sendMessage(senderId, { text: "⚙ 𝑫𝒆𝒕𝒆𝒄𝒕𝒊𝒏𝒈 𝑻𝒆𝒙𝒕 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
+    sendMessage(senderId, { text: "⚙ 𝑺𝒆𝒂𝒓𝒄𝒉𝒊𝒏𝒈 𝑺𝒐𝒏𝒈 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
 
     try {
-      const response = await axios.get(`https://kaiz-apis.gleeze.com/api/aidetector-v2?q=${encodeURIComponent(prompt)}`);
-      const ai = response.data.ai;
-      const human = response.data.human;
-      const mess = response.data.message;
-      const wordcount = response.data.wordcount;
-      const characters = response.data.characters;
-      //const genres = response.data.genres;
-      //const description = response.data.description;
-      //const url = response.data.url;
-      //const picture = response.data.picture;
-
+      const response = await axios.get(`https://apiv2.kenliejugarap.com/ytsearch?title=${encodeURIComponent(prompt)}`);
+      const info = response.data.video[0];
+      const title = info.title;
+      const url = info.url;
+      
       const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
       
-
+      
       sendMessage(senderId, { 
-        text: `𝘼𝙄 𝘿𝙀𝙏𝙀𝘾𝙏𝙊𝙍\n\n🤖𝘼𝙄 𝙎𝙏𝘼𝙏𝙐𝙎: ${ai}\n\n 🙎𝙃𝙐𝙈𝘼𝙉 𝙎𝙏𝘼𝙏𝙐𝙎: ${human}\n\n💌𝙈𝙀𝙎𝙎𝘼𝙂𝙀: ${mess}\n\n👁️‍🗨️𝙒𝙊𝙍𝘿 𝘾𝙊𝙐𝙉𝙏: ${wordcount}\n\n👁️‍🗨️𝘾𝙝𝙖𝙧𝙖𝙘𝙩𝙚𝙧𝙨: ${characters}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n` 
+        text: `𝗬𝗼𝘂𝘁𝘂𝗯𝗲 𝗗𝗼𝘄𝗻𝗹𝗼𝗮𝗱𝗲𝗿\n\n🤖𝑻𝒊𝒕𝒍𝒆: ${title}\n\n𝑼𝒓𝒍: ${url}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒊𝒏𝒈 𝑺𝒐𝒏𝒈 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕...` 
+      }, pageAccessToken);
+      
+      
+      
+      
+      const responses = await axios.get(`https://apiv2.kenliejugarap.com/music?url=${url}`);
+      const dlink = responses.data.response;
+     // const url = info.url;
+
+      
+
+      const audiomessage = {
+    attachment: {
+      type: 'audio',
+      payload: {
+        url: dlink,
+      },
+    },
+  };
+  await sendMessage(senderId, audiomessage, pageAccessToken);
+
       }, pageAccessToken);
     } catch (error) {
       console.error(error);
