@@ -1,14 +1,14 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'animeinfo',
-  description: 'Search information for anime!',
+  name: 'aidetect',
+  description: 'Detect if the generated text is an ai or human!',
   author: 'Dale Mekumi', 
-  usage: 'animeinfo animetitle',
+  usage: 'aidetect texthere',
   async execute(senderId, args, pageAccessToken, sendMessage) {
 
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "𝑼𝒔𝒂𝒈𝒆: 𝒂𝒏𝒊𝒎𝒆𝒊𝒏𝒇𝒐 𝒂𝒏𝒊𝒎𝒆𝒕𝒊𝒕𝒍𝒆" }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "𝑼𝒔𝒂𝒈𝒆: 𝒂𝒊𝒅𝒆𝒕𝒆𝒄𝒕 𝒕𝒆𝒙𝒕𝒉𝒆𝒓𝒆" }, pageAccessToken);
     
     sendMessage(senderId, { text: "⚙ 𝑺𝒆𝒂𝒓𝒄𝒉𝒊𝒏𝒈 𝑨𝒏𝒊𝒎𝒆 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
 
