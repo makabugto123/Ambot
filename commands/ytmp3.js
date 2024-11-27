@@ -14,7 +14,7 @@ module.exports = {
 
     try {
       const response = await axios.get(`https://apiv2.kenliejugarap.com/ytsearch?title=${encodeURIComponent(prompt)}`);
-      const info = response.data.video[0];
+      const info = response.data.videos[0];
       const title = info.title;
       const url = info.url;
       
