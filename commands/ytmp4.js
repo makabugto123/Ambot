@@ -1,16 +1,16 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'ytmp3',
+  name: 'ytmp4',
   description: 'Search Youtube Song And Download!',
   author: 'Dale Mekumi', 
   usage: 'ytmp3 songtitle',
   async execute(senderId, args, pageAccessToken, sendMessage) {
 
     const prompt = args.join(' ');
-    if (!prompt) return sendMessage(senderId, { text: "𝑼𝒔𝒂𝒈𝒆: 𝒚𝒕𝒎𝒑3 𝒕𝒊𝒕𝒍𝒆" }, pageAccessToken);
+    if (!prompt) return sendMessage(senderId, { text: "𝑼𝒔𝒂𝒈𝒆: 𝒚𝒕𝒎𝒑4 𝒕𝒊𝒕𝒍𝒆" }, pageAccessToken);
     
-    sendMessage(senderId, { text: "⚙ 𝑺𝒆𝒂𝒓𝒄𝒉𝒊𝒏𝒈 𝑺𝒐𝒏𝒈 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
+    sendMessage(senderId, { text: "⚙ 𝑺𝒆𝒂𝒓𝒄𝒉𝒊𝒏𝒈 𝑽𝒊𝒅𝒆𝒐 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕..." }, pageAccessToken);
 
     try {
       const response = await axios.get(`https://apiv2.kenliejugarap.com/ytsearch?title=${encodeURIComponent(prompt)}`);
