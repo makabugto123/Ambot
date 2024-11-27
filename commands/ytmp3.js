@@ -21,7 +21,7 @@ module.exports = {
       
       sendMessage(senderId, { 
         text: `𝑻𝒊𝒕𝒍𝒆: ${title}\n\n𝑼𝒓𝒍: ${url}\n\n⏰ 𝗔𝘀𝗶𝗮/𝗠𝗮𝗻𝗶𝗹𝗮: ${responseTime}\n\n𝑫𝒐𝒘𝒏𝒍𝒐𝒂𝒅𝒊𝒏𝒈 𝑺𝒐𝒏𝒈 𝑷𝒍𝒆𝒂𝒔𝒆 𝑾𝒂𝒊𝒕...` 
-      }, pageAccessToken);
+      , pageAccessToken);
       
       const responses = await axios.get(`https://apiv2.kenliejugarap.com/music?url=${url}`);
       const dlink = responses.data.response;
